@@ -10,7 +10,7 @@ print('Asteroid processing service')
 # Initiating and reading config values
 print('Loading configuration from file')
 
-# 
+#norāda API KEY un linku
 nasa_api_key = "9jJ6khEyrbZqt8yEYO3FehppjCfOEAiPoDjBU4Xv"
 nasa_api_url = "https://api.nasa.gov/neo/"
 
@@ -19,10 +19,10 @@ dt = datetime.now()
 request_date = str(dt.year) + "-" + str(dt.month).zfill(2) + "-" + str(dt.day).zfill(2)  
 print("Generated today's date: " + str(request_date))
 
-
+#requesting info from NASA API
 print("Request url: " + str(nasa_api_url + "rest/v1/feed?start_date=" + request_date + "&end_date=" + request_date + "&api_key=" + nasa_api_key))
 r = requests.get(nasa_api_url + "rest/v1/feed?start_date=" + request_date + "&end_date=" + request_date + "&api_key=" + nasa_api_key)
-
+#print NASA request response data
 print("Response status code: " + str(r.status_code))
 print("Response headers: " + str(r.headers))
 print("Response content: " + str(r.text))
